@@ -1,0 +1,93 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color-black, 0.8);
+
+  z-index: 5;
+
+  transition: all 0.2s;
+  visibility: hidden;
+  opacity: 0;
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__content {
+    @include absolute-center;
+
+    display: table;
+    width: 75%;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: $shadow-accent;
+
+    transition: all 0.2s ease 0.2s;
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+  }
+
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  &__left {
+    display: table-cell;
+    width: 34%;
+  }
+
+  &__right {
+    width: 66%;
+    padding: 5rem;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__right * + * {
+    margin-top: 2em;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__paragraph {
+    font-size: $font-size-default;
+
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-light-2;
+
+    hyphens: auto;
+  }
+
+  &__button {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    cursor: pointer;
+  }
+
+  &__icon {
+    &:link,
+    &:visited {
+      font-size: 2rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+    }
+  }
+}

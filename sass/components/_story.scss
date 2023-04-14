@@ -1,0 +1,85 @@
+.story {
+  width: 80%;
+
+  margin: 4em auto;
+  padding: 6rem;
+  padding-left: 9rem;
+
+  font-size: $font-size-default;
+
+  border-radius: 3px;
+  background-color: rgba($color-white, 0.6);
+  box-shadow: $shadow-accent;
+
+  -webkit-clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+
+  @include for-mobile {
+    padding: 5rem;
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    background-color: orangered;
+    transform: translateX(-3rem);
+    position: relative;
+    overflow: hidden;
+
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    @include for-mobile {
+      width: 100%;
+      text-align: center;
+      display: block;
+      height: 20rem;
+    }
+  }
+
+  &__img {
+    transition: all 0.4s ease-out;
+
+    backface-visibility: hidden;
+    transform: translateX(-15%) scale(1.2);
+    height: 100%;
+  }
+
+  &__caption {
+    @include absolute-center;
+
+    font-size: 1.8rem;
+    text-align: center;
+    backface-visibility: hidden;
+
+    color: $color-white;
+    text-transform: uppercase;
+
+    transform: translate(-50%, 20%);
+
+    transition: all 0.4s ease-out;
+    opacity: 0;
+  }
+
+  &:hover &__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  &:hover &__img {
+    transform: translateX(-15%) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+
+  &__text {
+    @include for-mobile {
+      width: 100%;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+}

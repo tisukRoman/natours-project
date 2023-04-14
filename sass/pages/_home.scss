@@ -1,0 +1,73 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+
+  @include for-tablet-landscape {
+    padding: 30rem 5rem;
+  }
+
+  @include for-tablet-portrait {
+    padding: 30rem 5rem 50rem 5rem;
+  }
+}
+
+.section-features {
+  background-size: cover;
+  background-image: $gradient-bg, url(../img/nat-4.jpg);
+  padding: 20rem 0;
+  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  margin-top: -20vh;
+
+  @include for-tablet-portrait {
+    -webkit-clip-path: polygon(0 12%, 100% 0, 100% 92%, 0 100%);
+    clip-path: polygon(0 12%, 100% 0, 100% 92%, 0 100%);
+  }
+
+  @include for-mobile {
+    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    padding: 20rem 5rem;
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 20rem 0;
+  margin-top: -20vh;
+
+  @include for-mobile {
+    padding: 25rem 5rem 20rem 5rem;
+  }
+}
+
+.section-stories {
+  position: relative;
+  padding: 10rem 0;
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: $gradient-bg;
+}
+
+.book {
+  height: 50rem;
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.85) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  box-shadow: $shadow-default;
+
+  &__form {
+    width: 50%;
+    padding: 5rem;
+  }
+}
