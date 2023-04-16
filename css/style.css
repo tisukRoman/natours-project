@@ -119,8 +119,14 @@ body {
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
+.text-left {
+  text-align: left !important; }
+
 .text-center {
   text-align: center !important; }
+
+.ml-0 {
+  margin-left: 0 !important; }
 
 .mb-8 {
   margin-bottom: 8rem !important; }
@@ -201,6 +207,9 @@ body {
   text-decoration: none;
   padding: 3px;
   transition: 0.2s; }
+  @media (max-width: 37.5em) {
+    .btn-text:link, .btn-text:visited {
+      font-size: 2rem; } }
 
 .btn-text::after {
   content: "";
@@ -384,15 +393,18 @@ body {
     clip-path: circle(50% at 50% 50%); }
     @media (max-width: 37.5em) {
       .story__shape {
-        width: 100%;
-        text-align: center;
-        display: block;
-        height: 20rem; } }
+        float: none;
+        margin: 0 auto;
+        position: relative;
+        transform: translateX(0rem); } }
   .story__img {
     transition: all 0.4s ease-out;
     backface-visibility: hidden;
     transform: translateX(-15%) scale(1.2);
     height: 100%; }
+    @media (max-width: 37.5em) {
+      .story__img {
+        text-align: center; } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -414,6 +426,7 @@ body {
     filter: blur(3px) brightness(80%); }
   @media (max-width: 37.5em) {
     .story__text {
+      float: none;
       width: 100%;
       text-align: center;
       margin-top: 2rem; } }
@@ -476,6 +489,11 @@ body {
   width: 45%;
   display: inline-block;
   padding-left: 0.5rem; }
+  @media (max-width: 37.5em) {
+    .form__radio-group {
+      display: block;
+      width: 100%;
+      margin-bottom: 4rem; } }
 
 .form__radio-label {
   font-size: 1.4rem;
@@ -544,8 +562,10 @@ body {
   transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1); }
   @media (max-width: 37.5em) {
     .navigation__background {
-      top: 4rem;
-      right: 4rem; } }
+      width: 5rem;
+      height: 5rem;
+      top: 5rem;
+      right: 5rem; } }
 
 .navigation__nav {
   height: 100vh;
@@ -569,6 +589,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90vw;
   list-style: none;
   text-align: center; }
 
@@ -661,11 +682,17 @@ body {
   .popup__left {
     display: table-cell;
     width: 34%; }
+    @media (max-width: 75em) {
+      .popup__left {
+        display: none; } }
   .popup__right {
     width: 66%;
     padding: 5rem;
     display: table-cell;
     vertical-align: middle; }
+    @media (max-width: 75em) {
+      .popup__right {
+        width: 100%; } }
   .popup__right * + * {
     margin-top: 2em; }
   .popup__img {
@@ -677,6 +704,9 @@ body {
     column-gap: 4rem;
     column-rule: 1px solid #eee;
     hyphens: auto; }
+    @media (max-width: 37.5em) {
+      .popup__paragraph {
+        column-count: 1; } }
   .popup__button {
     position: absolute;
     top: 2rem;
@@ -830,7 +860,7 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 20rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -20vh; }
   @media (max-width: 37.5em) {
     .section-tours {
@@ -845,12 +875,24 @@ body {
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
 
 .book {
-  height: 50rem;
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.85) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 5rem; }
+    @media (max-width: 56.25em) {
+      .book__form {
+        width: 100%;
+        margin: 0 auto;
+        padding: 5rem 4rem; } }
+    @media (max-width: 37.5em) {
+      .book__form {
+        width: 100%;
+        margin: 0 auto;
+        padding: 5rem 2rem; } }

@@ -40,8 +40,10 @@
     transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1);
 
     @include for-mobile {
-      top: 4rem;
-      right: 4rem;
+      width: 5rem;
+      height: 5rem;
+      top: 5rem;
+      right: 5rem;
     }
   }
 
@@ -70,6 +72,8 @@
 
   &__list {
     @include absolute-center;
+
+    width: 90vw;
 
     list-style: none;
     text-align: center;

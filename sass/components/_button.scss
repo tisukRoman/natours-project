@@ -77,6 +77,10 @@
     text-decoration: none;
     padding: 3px;
     transition: 0.2s;
+
+    @include for-mobile {
+      font-size: 2rem;
+    }
   }
 
   &::after {
