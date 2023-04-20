@@ -2,7 +2,7 @@
   height: 100vh;
   position: relative;
   background-color: $color-grey-light-1;
-  background-image: $gradient-bg, url(../img/hero.jpg);
+  background-image: $gradient-bg, url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
@@ -11,6 +11,11 @@
   @include for-tablet-portrait {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+
+  @include for-high-resolution {
+    background-color: $color-grey-light-1;
+    background-image: $gradient-bg, url(../img/hero.jpg);
   }
 
   &__logo-box {
